@@ -5,7 +5,7 @@ import java.util.Date;
 public class Sad extends Mood {
 
     public String format() {
-        return this.getDate() + " :(";
+        return ":(";
     }
 
     public Sad() {

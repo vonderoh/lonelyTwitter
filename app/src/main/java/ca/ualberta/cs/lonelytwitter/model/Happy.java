@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Happy extends Mood {
     public String format() {
-        return this.getDate() + " :)";
+        return ":)";
     }
 
     public Happy(){
