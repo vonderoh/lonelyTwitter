@@ -25,6 +25,9 @@ import java.util.ArrayList;
 
 import ca.ualberta.cs.lonelytwitter.model.Tweet;
 
+/** The class to manage the main activity
+ * @author wz (main) and vonderoh
+ */
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file1.json";
@@ -33,7 +36,10 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
 	
-	/** Called when the activity is first created. */
+	/** Called when the activity is first created.
+	 *  Used to set up the activity
+	 * @param savedInstanceState The state from the last application run
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -75,6 +81,9 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
+	/** Called when the activity is started
+	 *  Used to set up the old tweet list adapter
+	 */
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -85,6 +94,8 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
+	/** Loads the tweet list from file
+	 */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = new FileInputStream(new File(getFilesDir(), FILENAME));
@@ -104,7 +115,9 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/** Saves the tweet list to file
+	 */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = new FileOutputStream(new File(getFilesDir(), FILENAME));
